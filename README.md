@@ -21,5 +21,5 @@
 
 1. Clone the repository
 ```bash
-git clone https://github.com/pritomdutta/theme-switcher.git
+git clone https://github.com/PritomDutta89/theme-switcher.git
 cd theme-switcher
