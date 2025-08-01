@@ -23,3 +23,4 @@
 ```bash
 git clone https://github.com/PritomDutta89/theme-switcher.git
 cd theme-switcher
+npm i
