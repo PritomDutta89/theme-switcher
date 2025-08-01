@@ -2,6 +2,7 @@
 
 ### Developer: Pritom Dutta
 ### Role: React Frontend Developer (Assessment for Hipster Inc)
+### Live Preview: https://theme-switcher-hipster.netlify.app
 
 ---
 
