@@ -4,11 +4,9 @@ import React from "react";
 function Card({ product }: { product: any }) {
   return (
     <div className="bg-white dark:bg-gray-700 border border-gray-200 p-4 rounded shadow flex flex-col h-[300px] overflow-auto transition duration-300 delay-65 hover:hover:-translate-y-1 hover:scale-100 ease-in-out">
-      <h2 className="font-bold mb-2 text-lg dark:text-white">
-        {product.title}
-      </h2>
+      <h2 className="font-bold mb-2 text-lg text-black dark:text-gray-300 h-[80px] overflow-auto text-ellipsis">{product.title}</h2>
 
-      <p className="text-sm text-gray-700 dark:text-gray-300 mb-4 overflow-hidden line-clamp-3">
+      <p className="text-sm text-gray-700 dark:text-gray-300 mb-4 overflow-auto h-[80px] line-clamp-3">
         {product.description}
       </p>
 

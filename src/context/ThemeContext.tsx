@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useContext, useState, useEffect } from "react";
 import type { ThemeType } from "../themes/themes";
 
@@ -30,9 +29,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <div
-        className={`${themeClass} min-h-screen transition-colors duration-500 ease-in-out`}
-      >
+      <div className={`${themeClass} min-h-screen transition-all duration-300`}>
         {children}
       </div>
     </ThemeContext.Provider>
