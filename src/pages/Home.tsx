@@ -1,26 +1,51 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Card from "../components/Card";
+import { ClipLoader } from "react-spinners";
 
 const Home = () => {
   const [products, setProducts] = useState<any[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    axios.get('https://fakestoreapi.in/api/products').then((res) => {
-      setProducts(res?.data?.products || []);
-    });
+    getProducts();
   }, []);
 
+  const getProducts = async () => {
+    try {
+      setLoading(true);
+      const resp = await axios.get(`https://fakestoreapi.in/api/products`);
+      setProducts(resp?.data?.products ?? []);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen pt-[10rem]">
+        <ClipLoader color="green" />
+      </div>
+    );
+  }
+
   return (
-    <div className="pt-20 p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      {products.map((product) => (
-        <div key={product.id} className="bg-white dark:bg-gray-700 p-4 rounded shadow">
-          <h2 className="font-bold">{product.title}</h2>
-          <p>{product.description.slice(0, 100)}...</p>
-          <button className="mt-2 p-2 bg-blue-500 text-white rounded">Buy</button>
+    <>
+      {products?.length > 0 ? (
+        <div className=" p-3 md:p-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {products.map((product) => (
+            <Card key={product.id} product={product} />
+          ))}
         </div>
-      ))}
-    </div>
+      ) : (
+        <div className="flex justify-center items-center h-screen pt-[10rem]">
+          No Data Found...
+        </div>
+      )}
+    </>
   );
 };
 

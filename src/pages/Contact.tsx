@@ -1,10 +1,12 @@
 const Contact = () => {
   return (
-    <div className="pt-20 p-6 max-w-xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
-      <form className="space-y-4 bg-white dark:bg-gray-800 p-6 rounded shadow">
+    <div className="p-6 max-w-xl mx-auto">
+      <h1 className="text-3xl font-bold mb-6 text-center">Contact Us</h1>
+      <form className="space-y-4 bg-white dark:bg-gray-800 p-6 rounded shadow dark:text-white">
         <div>
-          <label className="block mb-1 font-semibold" htmlFor="name">Name</label>
+          <label className="block mb-1 font-semibold" htmlFor="name">
+            Name
+          </label>
           <input
             type="text"
             id="name"
@@ -13,7 +15,9 @@ const Contact = () => {
           />
         </div>
         <div>
-          <label className="block mb-1 font-semibold" htmlFor="email">Email</label>
+          <label className="block mb-1 font-semibold" htmlFor="email">
+            Email
+          </label>
           <input
             type="email"
             id="email"
@@ -22,7 +26,9 @@ const Contact = () => {
           />
         </div>
         <div>
-          <label className="block mb-1 font-semibold" htmlFor="message">Message</label>
+          <label className="block mb-1 font-semibold" htmlFor="message">
+            Message
+          </label>
           <textarea
             id="message"
             rows={4}
@@ -30,7 +36,10 @@ const Contact = () => {
             placeholder="Type your message..."
           ></textarea>
         </div>
-        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-all">
+        <button
+          type="submit"
+          className="cursor-pointer bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-all"
+        >
           Send
         </button>
       </form>
