@@ -62,7 +62,7 @@ const Header = () => {
           </Link>
 
           <select
-            className="p-2 border rounded cursor-pointer outline-0 ml-4 md:hidden dark:bg-gray-800 dark:text-white"
+            className="p-2 border rounded cursor-pointer outline-0 ml-4 md:hidden bg-white text-black"
             value={theme}
             onChange={(e) => setTheme(e.target.value as any)}
           >
